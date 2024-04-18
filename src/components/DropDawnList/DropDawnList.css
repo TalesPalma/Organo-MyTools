@@ -1,0 +1,19 @@
+.drop-down-list{
+    cursor: pointer;    
+}
+
+.drop-down-list label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.drop-down-list select{
+    background-color: white;
+    box-shadow: 10px 10px 38px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    padding: 20px;
+    box-sizing: border-box; 
+}

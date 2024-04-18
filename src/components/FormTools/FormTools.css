@@ -1,0 +1,20 @@
+.form-tools {
+    font-family: Montserrat;
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+
+.form-tools form {
+    max-width: 80%;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 20px 80px 20px 80px;
+    
+}
+
+
+
+
+

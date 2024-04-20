@@ -1,8 +1,8 @@
 .banner{
-    background-color:#6278F7;
     text-align: center;
 }
 
 .banner img{
     max-width: 100%;
+    border-radius: 0px 0px 5px 5px;
 }

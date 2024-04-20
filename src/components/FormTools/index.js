@@ -3,27 +3,32 @@ import TextField from '../TextField'
 import DropDawnList from '../DropDawnList'
 import ButtonForm from '../ButtonForm'
 import { useState } from 'react'
-const FormTools = () => {
+const FormTools = (props) => {
 
-    const toolsNames = [
-        "DevOps",
-        "Desing",
-        "Organização",
-        "Ides",
-        "Stacks"
-    ]
+        
 
     const onSalve = (event) => {
         event.preventDefault()
-        console.log('salve', nome, objetivo, imagem, ferramenta)
+        console.log('salve')
+
+        props.IfRegisteredCollaborator({
+            nome,
+            objetivo,
+            imagem,
+            site,
+            tool: category
+        })
+
     }
 
     const [nome, setNome] = useState('')
     const [objetivo, setObjetivo] = useState('')
     const [imagem, setImagem] = useState('')
-    const [ferramenta, setFerramenta] = useState('')
-    
+    const [site, setSite] = useState('')
+    const [category, setCategory] = useState('')
 
+
+   
 
 
     return (
@@ -56,11 +61,12 @@ const FormTools = () => {
                     isEmpty={true}
                     label='Site'
                     placeholder='Digite o link do site da ferramenta'
-                    value={ferramenta}
-                    whenType={setFerramenta} />
+                    value={site}
+                    whenType={setSite} />
                 <DropDawnList
-                    itens={toolsNames}
+                    itens={props.TeamsNames}
                     label="Selecione uma categoria"
+                    whenType={value => setCategory(value)}
                 />
                 <ButtonForm>Criar card</ButtonForm>
             </form>

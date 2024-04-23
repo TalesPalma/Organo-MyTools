@@ -1,0 +1,15 @@
+.button-close-open {
+    text-align: center;
+    justify-content: center;
+}
+
+.button-close-open button {
+    background-color: rgb(238, 80, 80);
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 50px;
+    border: none;
+    cursor: pointer;
+}

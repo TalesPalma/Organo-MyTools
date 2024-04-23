@@ -13,10 +13,15 @@ function App() {
     console.log(collaborators)
   }
 
+  
+
   return (
     <div className="App">
       <Banner />
-      <FormTools TeamsNames={teams.map ( t => t.name)} IfRegisteredCollaborator={collaborator => IsRegisteredCollaborator(collaborator)} />
+       <FormTools
+        TeamsNames={teams.map(t => t.name)}
+        IfRegisteredCollaborator={collaborator => IsRegisteredCollaborator(collaborator)}
+      />
 
       {teams.map(tool =>
         <ListItem
@@ -26,7 +31,6 @@ function App() {
           secondColor={tool.secondColor}
           collaboratorsList={collaborators.filter(collaborator => collaborator.category === tool.name)}
         />
-
       )}
     </div>
   );

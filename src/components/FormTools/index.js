@@ -3,6 +3,7 @@ import TextField from '../TextField'
 import DropDawnList from '../DropDawnList'
 import ButtonForm from '../ButtonForm'
 import { useState } from 'react'
+import ButtonCloseOpen from '../ButtonCloseOpen'
 const FormTools = (props) => {
 
         
@@ -10,7 +11,6 @@ const FormTools = (props) => {
     const onSalve = (event) => {
         event.preventDefault()
         
-
         props.IfRegisteredCollaborator({
             nome,
             objetivo,
@@ -19,6 +19,12 @@ const FormTools = (props) => {
             category: category
         })
 
+        setNome('')
+        setObjetivo('')
+        setImagem('')
+        setSite('')
+        setCategory(props.TeamsNames[0])
+        
     }
 
     const [nome, setNome] = useState('')
@@ -26,15 +32,14 @@ const FormTools = (props) => {
     const [imagem, setImagem] = useState('')
     const [site, setSite] = useState('')
     const [category, setCategory] = useState(props.TeamsNames[0])
-
-    
+    const [isShow,setIsShow] = useState(false)
 
 
    
 
 
     return (
-        <section className='form-tools'>
+       isShow ? <section className='form-tools'>
             <form onSubmit={onSalve} >
                 <h2>Preencha o formulário para criar uma nova ferramenta</h2>
                 <TextField
@@ -72,8 +77,10 @@ const FormTools = (props) => {
                 />
                 <ButtonForm>Criar card</ButtonForm>
             </form>
-        </section>
-    )
+            <ButtonCloseOpen  buttonColor={'rgb(238, 80, 80);'} onClick={() => setIsShow(!isShow)}>Close Form</ButtonCloseOpen>
+        </section> 
+        : <ButtonCloseOpen buttonColor={'#6278F7'} onClick={() => setIsShow(!isShow)}>Open Form</ButtonCloseOpen>
+    ) 
 }
 
 export default FormTools

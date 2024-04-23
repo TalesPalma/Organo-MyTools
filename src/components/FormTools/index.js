@@ -9,14 +9,14 @@ const FormTools = (props) => {
 
     const onSalve = (event) => {
         event.preventDefault()
-        console.log('salve')
+        
 
         props.IfRegisteredCollaborator({
             nome,
             objetivo,
             imagem,
             site,
-            tool: category
+            category: category
         })
 
     }
@@ -25,7 +25,9 @@ const FormTools = (props) => {
     const [objetivo, setObjetivo] = useState('')
     const [imagem, setImagem] = useState('')
     const [site, setSite] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState(props.TeamsNames[0])
+
+    
 
 
    

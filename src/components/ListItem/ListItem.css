@@ -1,7 +1,6 @@
-.list-item{
-   text-align: center;
-   padding: 32px;
-   
+.list-item {
+    text-align: center;
+    padding: 32px;
 }
 
 .list-item h3 {
@@ -11,3 +10,12 @@
     padding-bottom: 8px;
 }
 
+
+/* Colocar card lado a lado do outro */
+.list-item .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+}
+    
